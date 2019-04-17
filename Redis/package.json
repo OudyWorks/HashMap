@@ -1,0 +1,35 @@
+{
+  "name": "@oudy/hashmap-redis",
+  "version": "1.0.1",
+  "description": "HashMap for entities using Redis",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OudyWorks/HashMap.git"
+  },
+  "keywords": [
+    "hash",
+    "map",
+    "redis",
+    "oudy",
+    "works"
+  ],
+  "author": "Ayoub Oudmane <ayoub@oudmane.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OudyWorks/HashMap/issues"
+  },
+  "homepage": "https://github.com/OudyWorks/HashMap#readme",
+  "peerDependencies": {
+    "@oudy/hashmap": "1.*",
+    "@oudy/redis": "1.*",
+    "@oudy/entity": "1.*",
+    "object-path": "0.*"
+  },
+  "dependencies": {
+    "@oudy/entity": "^1.0.19",
+    "@oudy/hashmap": "^1.0.1",
+    "@oudy/redis": "^1.0.4",
+    "object-path": "^0.11.4"
+  }
+}

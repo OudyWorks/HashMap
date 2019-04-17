@@ -1,0 +1,28 @@
+{
+  "name": "@oudy/hashmap",
+  "version": "1.0.4",
+  "description": "HashMap for entities",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OudyWorks/HashMap.git"
+  },
+  "keywords": [
+    "hash",
+    "map",
+    "oudy",
+    "works"
+  ],
+  "author": "Ayoub Oudmane <ayoub@oudmane.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OudyWorks/HashMap/issues"
+  },
+  "homepage": "https://github.com/OudyWorks/HashMap#readme",
+  "peerDependencies": {
+    "object-path": "0.*"
+  },
+  "dependencies": {
+    "object-path": "^0.11.4"
+  }
+}
