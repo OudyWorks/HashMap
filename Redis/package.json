@@ -1,6 +1,6 @@
 {
   "name": "@oudy/hashmap-redis",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HashMap for entities using Redis",
   "main": "index.js",
   "repository": {

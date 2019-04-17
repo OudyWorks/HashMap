@@ -61,7 +61,7 @@ class RedisHashMap extends HashMap {
                     RedisHashMap.get(bind[$before], key),
                     CLIENT
                   )
-                if (objecRedisHashMaptPath.get(bind[$after], key))
+                if (RedisHashMap.get(bind[$after], key))
                   await RedisBatch.hset(
                     KEY,
                     RedisHashMap.get(bind[$after], key),
