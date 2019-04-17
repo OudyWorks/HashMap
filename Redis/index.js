@@ -9,8 +9,7 @@ const {
     $pluralName,
     $context
   } = require('@oudy/entity'),
-  RedisBatch = require('@oudy/redis/batch'),
-  objectPath = require('object-path')
+  RedisBatch = require('@oudy/redis/batch')
 
 class RedisHashMap extends HashMap {
   static use(Entity, keys = []) {
@@ -56,16 +55,16 @@ class RedisHashMap extends HashMap {
               if (bind.changes.includes(key)) {
                 const KEY = Entity[$key](key, bind.context),
                   CLIENT = Entity[$client](bind.context)
-                if (objectPath.get(bind[$before], key))
+                if (RedisHashMap.get(bind[$before], key))
                   await RedisBatch.hdel(
                     KEY,
-                    objectPath.get(bind[$before], key),
+                    RedisHashMap.get(bind[$before], key),
                     CLIENT
                   )
-                if (objectPath.get(bind[$after], key))
+                if (objecRedisHashMaptPath.get(bind[$after], key))
                   await RedisBatch.hset(
                     KEY,
-                    objectPath.get(bind[$after], key),
+                    RedisHashMap.get(bind[$after], key),
                     `${bind.id}`,
                     CLIENT
                   )

@@ -1,6 +1,6 @@
 {
   "name": "@oudy/hashmap-redis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HashMap for entities using Redis",
   "main": "index.js",
   "repository": {
@@ -23,13 +23,11 @@
   "peerDependencies": {
     "@oudy/hashmap": "1.*",
     "@oudy/redis": "1.*",
-    "@oudy/entity": "1.*",
-    "object-path": "0.*"
+    "@oudy/entity": "1.*"
   },
   "dependencies": {
-    "@oudy/entity": "^1.0.19",
-    "@oudy/hashmap": "^1.0.1",
-    "@oudy/redis": "^1.0.4",
-    "object-path": "^0.11.4"
+    "@oudy/entity": "^1.0.23",
+    "@oudy/hashmap": "^1.0.5",
+    "@oudy/redis": "^1.0.4"
   }
 }
