@@ -52,19 +52,21 @@ class RedisHashMap extends HashMap {
         bind => {
           keys.filter(key => key != 'id').forEach(
             async key => {
-              if (bind.changes.includes(key)) {
-                const KEY = Entity[$key](key, bind.context),
-                  CLIENT = Entity[$client](bind.context)
-                if (RedisHashMap.getKeyFromObject(bind[$before], key))
+              const KEY = Entity[$key](key, bind.context),
+                CLIENT = Entity[$client](bind.context),
+                before = RedisHashMap.getKeyFromObject(bind[$before], key),
+                after = RedisHashMap.getKeyFromObject(bind[$after], key)
+              if (bind.changes.includes(key) || before != after) {
+                if (before)
                   await RedisBatch.hdel(
                     KEY,
-                    RedisHashMap.getKeyFromObject(bind[$before], key),
+                    before,
                     CLIENT
                   )
-                if (RedisHashMap.getKeyFromObject(bind[$after], key))
+                if (after)
                   await RedisBatch.hset(
                     KEY,
-                    RedisHashMap.getKeyFromObject(bind[$after], key),
+                    after,
                     `${bind.id}`,
                     CLIENT
                   )

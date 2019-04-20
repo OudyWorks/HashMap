@@ -20,14 +20,14 @@ class HashMap {
           bindObject[$before] = {}
           this.constructor[$fields].forEach(
             key =>
-              bindObject[$before][key] = objectPath.get(this, key)
+              bindObject[$before][key] = objectPath.get(this, key) || this[key]
           )
           return bind.bind(this)(state, trackChange, bindObject).then(
             bindObject => {
               bindObject[$after] = {}
               this.constructor[$fields].forEach(
                 key =>
-                  bindObject[$after][key] = objectPath.get(this, key)
+                  bindObject[$after][key] = objectPath.get(this, key) || this[key]
               )
               return bindObject
             }
@@ -47,7 +47,7 @@ class HashMap {
   static getKeyFromObject(object, key) {
     if (key.match(/\./))
       key = [key]
-    return objectPath.get(object, key)
+    return objectPath.get(object, key) || object[key]
   }
 }
 
