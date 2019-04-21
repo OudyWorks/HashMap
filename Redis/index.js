@@ -14,10 +14,10 @@ const {
 class RedisHashMap extends HashMap {
   static use(Entity, keys = []) {
     super.use(Entity, keys)
-    Entity[$client] = function () {
+    Entity[$client] =  Entity[$client] || function () {
       return 'default'
     }
-    Entity[$key] = function (key = 'id', context = {}) {
+    Entity[$key] = Entity[$key] || function (key = 'id', context = {}) {
       return this[$context].map(
         key =>
           `${key}:${context[key]}`
