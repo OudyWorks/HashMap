@@ -1,20 +1,22 @@
-const {
+import {
   $before,
-  $after
-} = HashMap = require('@oudy/hashmap'),
-  $client = Symbol('client'),
-  $key = Symbol('key'),
-  {
-    $validateContext,
-    $pluralName,
-    $context
-  } = require('@oudy/entity'),
-  RedisBatch = require('@oudy/redis/batch')
+  $after,
+  default as HashMap
+} from '@oudy/hashmap'
+import {
+  $validateContext,
+  $pluralName,
+  $context
+} from '@oudy/entity'
+import RedisBatch from '@oudy/redis/batch'
+
+const $client = Symbol('client'),
+  $key = Symbol('key')
 
 class RedisHashMap extends HashMap {
   static use(Entity, keys = []) {
     super.use(Entity, keys)
-    Entity[$client] =  Entity[$client] || function () {
+    Entity[$client] = Entity[$client] || function () {
       return 'default'
     }
     Entity[$key] = Entity[$key] || function (key = 'id', context = {}) {
@@ -79,12 +81,9 @@ class RedisHashMap extends HashMap {
   }
 }
 
-Object.assign(
-  RedisHashMap,
-  {
-    $client,
-    $key
-  }
-)
+export {
+  $client,
+  $key
+}
 
-module.exports = RedisHashMap
+export default RedisHashMap

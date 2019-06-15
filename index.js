@@ -1,8 +1,9 @@
+import objectPath from 'object-path'
+
 const $fields = Symbol('fields'),
   $cache = Symbol('cache'),
   $before = Symbol('before'),
-  $after = Symbol('after'),
-  objectPath = require('object-path')
+  $after = Symbol('after')
 
 class HashMap {
   static setup(Entity) {
@@ -51,14 +52,11 @@ class HashMap {
   }
 }
 
-Object.assign(
-  HashMap,
-  {
-    $fields,
-    $cache,
-    $before,
-    $after
-  }
-)
+export {
+  $fields,
+  $cache,
+  $before,
+  $after
+}
 
-module.exports = HashMap
+export default HashMap

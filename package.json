@@ -1,6 +1,6 @@
 {
   "name": "@oudy/hashmap",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "HashMap for entities",
   "main": "index.js",
   "repository": {
